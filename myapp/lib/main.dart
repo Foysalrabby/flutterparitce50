@@ -42,13 +42,35 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          child: TextField(
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+         TextField(
             decoration: InputDecoration(
               border:OutlineInputBorder(
-                
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
+              )
+             ),
+          ),
+          Container(
+            height: 10, 
+          ),
+
+          TextField(
+            decoration: InputDecoration(
+              border:OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
               )
              ),
           )
+
+            ]
+            ),
+          
+         
         ),
       ),
     );
