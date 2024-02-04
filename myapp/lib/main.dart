@@ -41,19 +41,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child:Column(
-         
-          children: [
-            Text("${time}"),
-            ElevatedButton(onPressed: (){
-              setState(() {
+        child: Container(
+          child: TextField(
+            decoration: InputDecoration(
+              border:OutlineInputBorder(
                 
-              });
-            }, 
-            child: Text("click"))
-          ],
-       
-      )),
+              )
+             ),
+          )
+        ),
+      ),
     );
   }
 }
