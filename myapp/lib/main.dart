@@ -48,10 +48,19 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
          TextField(
             decoration: InputDecoration(
-              border:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
-              )
+              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),
+
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 161, 137, 30),
+                      width: 2
+                      )
+                    
+                    
+                    ),
+              // border:OutlineInputBorder(
+              //       borderRadius: BorderRadius.circular(20),
+              //       borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
+              // )
              ),
           ),
           Container(
@@ -63,7 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
               border:OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
-              )
+              ),
+              hintText: "enter password"
              ),
           )
 
