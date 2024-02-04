@@ -49,7 +49,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         
         child: Card(
-          child: Text("hello"),
+          color: const Color.fromARGB(255, 111, 168, 214),
+          shadowColor: const Color.fromARGB(31, 247, 8, 8),
+            elevation: 16, // implement shadow color
+          child:Padding(
+            padding:EdgeInsets.all(8),
+            child:Container(
+              width: 100,
+              height: 100,
+              child: Center(
+                child: Text("hello m")
+              )
+            ),
+           ) ,
         ),
        
       ),
