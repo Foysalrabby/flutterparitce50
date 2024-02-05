@@ -48,15 +48,26 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
          TextField(
             decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),
-
-                    borderSide: BorderSide(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                   borderSide: BorderSide(
                       color: Color.fromARGB(255, 161, 137, 30),
                       width: 2
                       )
                     
                     
                     ),
+                 enabledBorder: OutlineInputBorder(
+                   borderRadius: BorderRadius.circular(20),
+                   borderSide: BorderSide(
+                      color: Color.fromARGB(255, 161, 137, 30),
+                      width: 2
+                      )
+                    
+                    ),   
+
+
+
               // border:OutlineInputBorder(
               //       borderRadius: BorderRadius.circular(20),
               //       borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
