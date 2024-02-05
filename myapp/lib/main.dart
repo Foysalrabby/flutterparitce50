@@ -78,6 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextField(
               controller: passwordltext,
+              obscureText: true,
+              obscuringCharacter:"*" ,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
