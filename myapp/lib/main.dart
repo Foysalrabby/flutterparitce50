@@ -33,73 +33,46 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var time = DateTime.now();
-    var emailtext = TextEditingController();
-    var passwordltext = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
-        child: Container(
-          width: 300,
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            TextField(
-              controller: emailtext,
-              decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                          color: Color.fromARGB(255, 161, 137, 30), width: 2)),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(
-                        color: Color.fromARGB(255, 161, 137, 30), width: 2),
-                  ),
-                  suffixText: "username", //input last use suffix
-                  suffixIcon: IconButton(
-                    icon: Icon(Icons.remove_red_eye),
-                    onPressed: () {},
-                  ),
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: Colors.red,
-                  ) //samne bose
-
-                  // border:OutlineInputBorder(
-                  //       borderRadius: BorderRadius.circular(20),
-                  //       borderSide: BorderSide(color: Color.fromARGB(255, 161, 137, 30))
-                  // )
-                  ),
-            ),
-            Container(
-              height: 10,
-            ),
-            TextField(
-              controller: passwordltext,
-              obscureText: true,
-              obscuringCharacter:"*" ,
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide:
-                          BorderSide(color: Color.fromARGB(255, 161, 137, 30))),
-                  hintText: "enter password"),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 7),
-              child: ElevatedButton(
-                  onPressed: () {
-                    var email = emailtext.text.toString();
-                    var password = passwordltext.text.toString();
-                    print("${email},${password}");
-                  },
-                  child: Text("Login")),
-            )
-          ]),
-        ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text(
+            "Select Date",
+            style: TextStyle(fontSize: 20),
+          ),
+          ElevatedButton(
+              onPressed: () async {
+                DateTime? datePicker = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime(2024, 1, 1),
+                  firstDate: DateTime(2021), // Updated firstDate
+                  lastDate: DateTime(2024), // Updated lastDate
+                );
+                if (datePicker != null) {
+                  print(
+                      "Date: ${datePicker.day}, ${datePicker.month}, ${datePicker.year}");
+                }
+              },
+              child: Text("show tine")),
+          ElevatedButton(
+            onPressed: () async {
+              TimeOfDay? timepicker = await showTimePicker(
+                context: context,
+                initialTime: TimeOfDay.now(),
+                initialEntryMode: TimePickerEntryMode.input,
+              );
+              if (timepicker != null) {
+                print(
+                    "${timepicker.hour}, ${timepicker.minute}, ${timepicker}");
+              }
+            },
+            child: Text("show date"),
+          ),
+        ]),
       ),
     );
   }
