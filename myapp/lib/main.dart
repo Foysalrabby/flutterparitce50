@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
          TextField(
+          enabled: false,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -58,6 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     
                     ),
                  enabledBorder: OutlineInputBorder(
+                   borderRadius: BorderRadius.circular(20),
+                   borderSide: BorderSide(
+                      color: Color.fromARGB(255, 161, 137, 30),
+                      width: 2
+                      )
+                    
+                    ),
+                    disabledBorder: OutlineInputBorder(
                    borderRadius: BorderRadius.circular(20),
                    borderSide: BorderSide(
                       color: Color.fromARGB(255, 161, 137, 30),
