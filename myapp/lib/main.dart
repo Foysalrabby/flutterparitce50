@@ -80,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: passwordltext,
               obscureText: true,
               obscuringCharacter:"*" ,
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
