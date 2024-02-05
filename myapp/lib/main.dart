@@ -47,33 +47,35 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
          TextField(
-          enabled: false,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                    borderSide: BorderSide(
                       color: Color.fromARGB(255, 161, 137, 30),
                       width: 2
-                      )
-                    
-                    
+                      )  
                     ),
                  enabledBorder: OutlineInputBorder(
                    borderRadius: BorderRadius.circular(20),
                    borderSide: BorderSide(
                       color: Color.fromARGB(255, 161, 137, 30),
                       width: 2
-                      )
+                      ),
+                      
+                    ),
+                    suffixText: "username", //input last use suffix
+                  suffixIcon: IconButton(
+                    icon:Icon(Icons.remove_red_eye),
+                    onPressed: (){
+
+                    },
                     
                     ),
-                    disabledBorder: OutlineInputBorder(
-                   borderRadius: BorderRadius.circular(20),
-                   borderSide: BorderSide(
-                      color: Color.fromARGB(255, 161, 137, 30),
-                      width: 2
-                      )
-                    
-                    ),   
+                    prefixIcon: Icon(Icons.email,color: Colors.red,) //samne bose
+                  
+                  
+                 
+                  
 
 
 
