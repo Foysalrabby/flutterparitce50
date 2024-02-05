@@ -87,7 +87,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 7),
-              child: ElevatedButton(onPressed: () {}, child: Text("Login")),
+              child: ElevatedButton(
+                  onPressed: () {
+                    var email = emailtext.text.toString();
+                    var password = passwordltext.text.toString();
+                    print("${email},${password}");
+                  },
+                  child: Text("Login")),
             )
           ]),
         ),
