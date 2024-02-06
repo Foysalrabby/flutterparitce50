@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var arrayColor=[
+    var arrayColor = [
       Colors.brown,
       const Color.fromARGB(255, 104, 121, 72),
       Color.fromARGB(255, 8, 50, 187),
@@ -42,45 +42,18 @@ class _MyHomePageState extends State<MyHomePage> {
       Color.fromARGB(255, 205, 219, 6),
     ];
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body:GridView.extent(
-        maxCrossAxisExtent: 100,
-      crossAxisSpacing: 11, // for columnwsie
-      mainAxisSpacing: 11, //for wise spacing
-      
-
-     children: [
-      
-     Container(
-       color: arrayColor[0],
-     ),
-      Container(
-       color: arrayColor[1],
-     ),
-      Container(
-       color: arrayColor[2],
-     ),
-      Container(
-       color: arrayColor[3],
-     ),
-      Container(
-       color: arrayColor[4],
-     ),
-      Container(
-       color: arrayColor[5],
-     ),
-      Container(
-       color: arrayColor[1],
-     ),
-      Container(
-       color: arrayColor[0],
-     )
-
-      ],
-      )  
-    );
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
+        ),
+        body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          itemBuilder: (context, index) {
+            return Container(
+              color: arrayColor[index],
+            );
+          },
+          itemCount: arrayColor.length,
+        ));
   }
 }
