@@ -33,47 +33,48 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var arrayColor=[
+      Colors.brown,
+      const Color.fromARGB(255, 104, 121, 72),
+      Color.fromARGB(255, 8, 50, 187),
+      Color.fromARGB(255, 148, 202, 23),
+      Color.fromARGB(255, 146, 11, 11),
+      Color.fromARGB(255, 205, 219, 6),
+    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            "Select Date",
-            style: TextStyle(fontSize: 20),
-          ),
-          ElevatedButton(
-              onPressed: () async {
-                DateTime? datePicker = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime(2024, 1, 1),
-                  firstDate: DateTime(2021), // Updated firstDate
-                  lastDate: DateTime(2024), // Updated lastDate
-                );
-                if (datePicker != null) {
-                  print(
-                      "Date: ${datePicker.day}, ${datePicker.month}, ${datePicker.year}");
-                }
-              },
-              child: Text("show tine")),
-          ElevatedButton(
-            onPressed: () async {
-              TimeOfDay? timepicker = await showTimePicker(
-                context: context,
-                initialTime: TimeOfDay.now(),
-                initialEntryMode: TimePickerEntryMode.input,
-              );
-              if (timepicker != null) {
-                print(
-                    "${timepicker.hour}, ${timepicker.minute}, ${timepicker}");
-              }
-            },
-            child: Text("show date"),
-          ),
-        ]),
-      ),
+      body:GridView.count(crossAxisCount: 2,
+      children: [
+     Container(
+       color: arrayColor[0],
+     ),
+      Container(
+       color: arrayColor[1],
+     ),
+      Container(
+       color: arrayColor[2],
+     ),
+      Container(
+       color: arrayColor[3],
+     ),
+      Container(
+       color: arrayColor[4],
+     ),
+      Container(
+       color: arrayColor[5],
+     ),
+      Container(
+       color: arrayColor[1],
+     ),
+      Container(
+       color: arrayColor[0],
+     )
+
+      ],
+      )  
     );
   }
 }
