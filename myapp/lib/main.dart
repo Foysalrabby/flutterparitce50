@@ -54,12 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
            
               color: Colors.blue,
             ),
-
-            Container(
-              width: 100,
+           Positioned(
+            top: 10,
+            left: 10,
+            child:Container(
+        
+              width: 160,
               height: 160,
               color: Colors.amber,
-            )
+            ))
+            
           ],
         )
          );
