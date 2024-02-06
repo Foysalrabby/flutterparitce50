@@ -47,6 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body:GridView.count(crossAxisCount: 2,
+      crossAxisSpacing: 11, // for columnwsie
+      mainAxisSpacing: 11, //for wise spacing
+
       children: [
      Container(
        color: arrayColor[0],
