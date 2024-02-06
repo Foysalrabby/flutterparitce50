@@ -46,23 +46,23 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body:GridView.count(crossAxisCount: 3,
+      body:GridView.extent(
+        maxCrossAxisExtent: 100,
       crossAxisSpacing: 11, // for columnwsie
       mainAxisSpacing: 11, //for wise spacing
-        
-
+      
 
      children: [
-      Padding(padding: EdgeInsets.all(8),child: Container(
+      
+     Container(
        color: arrayColor[0],
-     ), ),
-    
-     Padding(padding: EdgeInsets.all(8),child: Container(
+     ),
+      Container(
        color: arrayColor[1],
-     ), ),
-      Padding(padding: EdgeInsets.all(8),child: Container(
+     ),
+      Container(
        color: arrayColor[2],
-     ), ),
+     ),
       Container(
        color: arrayColor[3],
      ),
