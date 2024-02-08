@@ -26,7 +26,15 @@ class custombutton extends StatelessWidget {
           icon !,
           Text(buttonmane,style: textStyle,)
            
-        ],) : Text(buttonmane,style: textStyle,)
+        ],) : Text(buttonmane,style: textStyle,),
+        style: ElevatedButton.styleFrom(
+          primary: bgcolor,
+          shadowColor: bgcolor,  //to give another color
+          shape: RoundedRectangleBorder(
+             borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
+             bottomRight: Radius.circular(20))
+          )
+        ),
         
         
         ); //if else

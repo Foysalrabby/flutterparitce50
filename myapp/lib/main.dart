@@ -40,10 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: Center(
-           child: custombutton(buttonmane: "rabbi",icon: Icon(Icons.abc),bgcolor: Colors.amber,callback: () {
-            print("log in");
-           },)
+        body:Container(
+          width: 300,
+          child: Center(
+             child: custombutton(buttonmane: "rabbi",icon: Icon(Icons.lock_clock),bgcolor: Colors.amber,callback: () {
+              print("log in");
+             },)
+          )
         ));
   }
 }
