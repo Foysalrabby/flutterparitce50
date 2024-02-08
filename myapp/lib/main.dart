@@ -33,6 +33,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var arrycolor = [
+      Color.fromARGB(255, 95, 16, 60),
+      Color.fromARGB(255, 124, 42, 42),
+      Color.fromARGB(255, 11, 192, 86),
+      Color.fromARGB(255, 4, 42, 126)
+    ];
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -68,16 +74,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Color.fromARGB(255, 109, 21, 136),
                 child: ListView.builder(
                   itemBuilder: (context, index) {
-                    return (
-                    ListTile(
+                    return (ListTile(
                       leading: CircleAvatar(
-                        backgroundColor: Colors.amber,     //leading sit first
+                        backgroundColor: Colors.amber, //leading sit first
                         child: Icon(Icons.add_a_photo),
-                        ),
-                        title:Text("Lorem is good") ,   //tittle second
-                         trailing: Text("#",style: TextStyle(color: Colors.white),),  //last bose 
-                    )
-                    );
+                      ),
+                      title: Text("Lorem is good"), //tittle second
+                      trailing: Text(
+                        "#",
+                        style: TextStyle(color: Colors.white),
+                      ), //last bose
+                    ));
                   },
                   itemCount: 10,
                 ),
@@ -86,15 +93,36 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               flex: 2,
               child: Container(
-                height: 200,
-                color: Color.fromARGB(255, 233, 236, 43),
-              ),
+                  height: 200,
+                  color: Color.fromARGB(255, 233, 236, 43),
+                  child: Padding(
+                    padding: EdgeInsets.all(6),
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          color: arrycolor[index],
+                        );
+                      },
+                      itemCount: arrycolor.length,
+                      scrollDirection: Axis.horizontal,
+                    ),
+                  )),
             ),
             Expanded(
               flex: 2,
               child: Container(
                 height: 150,
                 color: Color.fromARGB(255, 235, 85, 16),
+                margin: EdgeInsets.only(top: 4, bottom: 4),
+                child: Card(
+                  child: Container(
+                    width: 100,
+                    height: 50,
+                    color: Colors.amber,
+                  ),
+                ),
               ),
             ),
             Expanded(
@@ -106,5 +134,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ]),
         ));
+  }
+}
+
+class Craditems extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return Expanded(child: child);
   }
 }
