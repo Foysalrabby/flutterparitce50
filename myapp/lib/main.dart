@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Custom app'),
     );
   }
 }
@@ -33,39 +33,63 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var arrayColor = [
-      Colors.brown,
-      const Color.fromARGB(255, 104, 121, 72),
-      Color.fromARGB(255, 8, 50, 187),
-      Color.fromARGB(255, 148, 202, 23),
-      Color.fromARGB(255, 146, 11, 11),
-      Color.fromARGB(255, 205, 219, 6),
-    ];
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body:Stack(
-          children: [
-            Container(
-              width: 200,
-              height: 200,
-           
-              color: Colors.blue,
+        body: Container(
+          padding: EdgeInsets.all(8),
+          child: Column(children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 150,
+                color: Color.fromARGB(255, 55, 136, 202),
+                child: ListView.builder(
+                  itemBuilder: (context, index) => Padding(
+                    padding: EdgeInsets.all(8),
+                    child: SizedBox(
+                      width: 100,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.red,
+                       ),
+                    ),
+                    ),
+                  itemCount: 5,
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
             ),
-           Positioned(
-            top: 10,
-            left: 10,
-            child:Container(
-        
-              width: 160,
-              height: 160,
-              color: Colors.amber,
-            ))
-            
-          ],
-        )
-         );
+            Expanded(
+              flex: 4,
+              child: Container(
+                height: 200,
+                color: Color.fromARGB(255, 109, 21, 136),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 200,
+                color: Color.fromARGB(255, 233, 236, 43),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 150,
+                color: Color.fromARGB(255, 235, 85, 16),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                height: 150,
+                color: Color.fromARGB(255, 102, 214, 27),
+              ),
+            ),
+          ]),
+        ));
   }
 }
