@@ -110,21 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   )),
             ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                height: 150,
-                color: Color.fromARGB(255, 235, 85, 16),
-                margin: EdgeInsets.only(top: 4, bottom: 4),
-                child: Card(
-                  child: Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.amber,
-                  ),
-                ),
-              ),
-            ),
+            Craditems(),  //to call
             Expanded(
               flex: 1,
               child: Container(
@@ -137,9 +123,27 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class Craditems extends StatefulWidget {
+class Craditems extends StatelessWidget {
   @override
-  State<StatefulWidget> createState() {
-    return Expanded(child: child);
+  Widget build(BuildContext context) {
+    return 
+       Expanded(
+              flex: 2,
+              child: Container(
+                height: 150,
+                color: Color.fromARGB(255, 235, 85, 16),
+                margin: EdgeInsets.only(top: 4, bottom: 4),
+                child: Card(
+                  child: Container(
+                    width: 100,
+                    height: 50,
+                    color: Colors.amber,
+                    child: Text("heello"),
+                  ),
+                ),
+              ),
+            );
+
+   
   }
 }
