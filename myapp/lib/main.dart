@@ -41,7 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-           child: custombutton()
+           child: custombutton(buttonmane: "rabbi",icon: Icon(Icons.abc),bgcolor: Colors.amber,callback: () {
+            print("log in");
+           },)
         ));
   }
 }
