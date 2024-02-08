@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Uihelpercoustom/custowaget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,9 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-           child: ElevatedButton(onPressed: (){
-
-           },child: Text("click"),),
+           child: custombutton()
         ));
   }
 }
