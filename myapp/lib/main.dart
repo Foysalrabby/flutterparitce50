@@ -53,9 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 100,
                       child: CircleAvatar(
                         backgroundColor: Colors.red,
-                       ),
+                      ),
                     ),
-                    ),
+                  ),
                   itemCount: 5,
                   scrollDirection: Axis.horizontal,
                 ),
@@ -66,6 +66,21 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Container(
                 height: 200,
                 color: Color.fromARGB(255, 109, 21, 136),
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return (
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.amber,     //leading sit first
+                        child: Icon(Icons.add_a_photo),
+                        ),
+                        title:Text("Lorem is good") ,   //tittle second
+                         trailing: Text("#",style: TextStyle(color: Colors.white),),  //last bose 
+                    )
+                    );
+                  },
+                  itemCount: 10,
+                ),
               ),
             ),
             Expanded(
